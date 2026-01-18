@@ -1,0 +1,19 @@
+{
+  "schema_version": "2.1",
+  "profile_id": "codeindex.java@2.1",
+  "ordering": "lex",
+  "generated_at": "2026-01-16T00:00:00Z",
+  "files": [
+    { "file_id": "tricky_comments.java", "lines": 0, "bytes": 0, "sha256": "REPLACE_ME" }
+  ],
+  "symbols": [
+    { "identifier": "C", "occurrences": [{ "file_id": "tricky_comments.java", "line": 2, "col_start": 14, "col_end": 15 }], "stats": { "occurrence_count": 1, "unique_line_count": 1 } },
+    { "identifier": "alpha", "occurrences": [
+        { "file_id": "tricky_comments.java", "line": 4, "col_start": 15, "col_end": 20 },
+        { "file_id": "tricky_comments.java", "line": 5, "col_start": 38, "col_end": 43 }
+      ], "stats": { "occurrence_count": 2, "unique_line_count": 2 } },
+    { "identifier": "beta", "occurrences": [{ "file_id": "tricky_comments.java", "line": 5, "col_start": 17, "col_end": 21 }], "stats": { "occurrence_count": 1, "unique_line_count": 1 } },
+    { "identifier": "gamma", "occurrences": [{ "file_id": "tricky_comments.java", "line": 5, "col_start": 30, "col_end": 35 }], "stats": { "occurrence_count": 1, "unique_line_count": 1 } }
+  ],
+  "diagnostics": []
+}

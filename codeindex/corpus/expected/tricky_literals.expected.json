@@ -1,0 +1,22 @@
+{
+  "schema_version": "2.1",
+  "profile_id": "codeindex.java@2.1",
+  "ordering": "lex",
+  "generated_at": "2026-01-16T00:00:00Z",
+  "files": [
+    { "file_id": "tricky_literals.java", "lines": 0, "bytes": 0, "sha256": "REPLACE_ME" }
+  ],
+  "symbols": [
+    { "identifier": "L", "occurrences": [{ "file_id": "tricky_literals.java", "line": 1, "col_start": 14, "col_end": 15 }], "stats": { "occurrence_count": 1, "unique_line_count": 1 } },
+    { "identifier": "String", "occurrences": [{ "file_id": "tricky_literals.java", "line": 3, "col_start": 5, "col_end": 11 }], "stats": { "occurrence_count": 1, "unique_line_count": 1 } },
+    { "identifier": "alpha", "occurrences": [
+        { "file_id": "tricky_literals.java", "line": 5, "col_start": 9, "col_end": 14 },
+        { "file_id": "tricky_literals.java", "line": 6, "col_start": 20, "col_end": 25 }
+      ], "stats": { "occurrence_count": 2, "unique_line_count": 2 } },
+    { "identifier": "beta", "occurrences": [{ "file_id": "tricky_literals.java", "line": 6, "col_start": 9, "col_end": 13 }], "stats": { "occurrence_count": 1, "unique_line_count": 1 } },
+    { "identifier": "c", "occurrences": [{ "file_id": "tricky_literals.java", "line": 4, "col_start": 10, "col_end": 11 }], "stats": { "occurrence_count": 1, "unique_line_count": 1 } },
+    { "identifier": "run", "occurrences": [{ "file_id": "tricky_literals.java", "line": 2, "col_start": 15, "col_end": 18 }], "stats": { "occurrence_count": 1, "unique_line_count": 1 } },
+    { "identifier": "s", "occurrences": [{ "file_id": "tricky_literals.java", "line": 3, "col_start": 12, "col_end": 13 }], "stats": { "occurrence_count": 1, "unique_line_count": 1 } }
+  ],
+  "diagnostics": []
+}
