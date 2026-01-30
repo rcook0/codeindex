@@ -1,0 +1,15 @@
+{
+  "version": "2.2",
+  "profiles": {
+    "java": "corpus/profiles.java.json",
+    "cpp": "corpus/profiles.cpp.json"
+  },
+  "rules": [
+    {"match": {"glob": "**/*.java"}, "profile": "java"},
+    {"match": {"glob": "**/*.cpp"}, "profile": "cpp"},
+    {"match": {"glob": "**/*.cc"}, "profile": "cpp"},
+    {"match": {"glob": "**/*.cxx"}, "profile": "cpp"},
+    {"match": {"glob": "**/*.h"}, "profile": "cpp"},
+    {"match": {"glob": "**/*.hpp"}, "profile": "cpp"}
+  ]
+}

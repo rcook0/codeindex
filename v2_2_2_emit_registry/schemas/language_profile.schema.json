@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://codeindex.dev/schemas/language_profile.schema.json",
+  "title": "CodeIndex LanguageProfile",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "name",
+    "identifier_rule",
+    "stop_words",
+    "comment_syntax",
+    "literal_syntax",
+    "case_sensitivity",
+    "normalization"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "profile_id": { "type": "string", "minLength": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "version": { "type": "string" },
+
+    "case_sensitivity": { "type": "string", "enum": ["sensitive", "insensitive"] },
+
+    "normalization": {
+      "type": "object",
+      "required": ["mode"],
+      "additionalProperties": false,
+      "properties": {
+        "mode": { "type": "string", "enum": ["none", "nfkc", "lowercase_ascii"] },
+        "preserve_original_spelling": { "type": "boolean", "default": true }
+      }
+    },
+
+    "identifier_rule": {
+      "type": "object",
+      "required": ["mode"],
+      "additionalProperties": false,
+      "properties": {
+        "mode": { "type": "string", "enum": ["regex", "unicode_identifier"] },
+        "pattern": {
+          "type": "string",
+          "description": "Required when mode=regex. Regex dialect is implementation-defined; recommend ECMAScript or RE2."
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "mode": { "const": "regex" } } },
+          "then": { "required": ["pattern"] }
+        }
+      ]
+    },
+
+    "stop_words": {
+      "type": "object",
+      "required": ["mode"],
+      "additionalProperties": false,
+      "properties": {
+        "mode": { "type": "string", "enum": ["inline", "uri", "none"] },
+        "words": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "uri": { "type": "string", "format": "uri" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "mode": { "const": "inline" } } },
+          "then": { "required": ["words"] }
+        },
+        {
+          "if": { "properties": { "mode": { "const": "uri" } } },
+          "then": { "required": ["uri"] }
+        }
+      ]
+    },
+
+    "comment_syntax": {
+      "type": "object",
+      "required": ["line_comment_starts", "block_comment_starts", "block_comment_ends"],
+      "additionalProperties": false,
+      "properties": {
+        "line_comment_starts": { "type": "array", "items": { "type": "string" }, "default": ["//"] },
+        "block_comment_starts": { "type": "array", "items": { "type": "string" }, "default": ["/*"] },
+        "block_comment_ends": { "type": "array", "items": { "type": "string" }, "default": ["*/"] }
+      }
+    },
+
+    "literal_syntax": {
+      "type": "object",
+      "required": ["exclude_literals", "string_delims", "char_delims", "escape_char"],
+      "additionalProperties": false,
+      "properties": {
+        "exclude_literals": { "type": "boolean", "default": true },
+        "string_delims": { "type": "array", "items": { "type": "string" }, "default": ["\""] },
+        "char_delims": { "type": "array", "items": { "type": "string" }, "default": ["'"] },
+        "escape_char": { "type": "string", "default": "\\" },
+        "allow_multiline_strings": { "type": "boolean", "default": false }
+      }
+    },
+
+    "symbol_policy": {
+      "type": "object",
+      "description": "Controls which identifiers are considered indexable for this language profile.",
+      "required": ["mode"],
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": ["all", "declared"],
+          "default": "all",
+          "description": "all = index every identifier token; declared = index declared identifiers plus any profile-permitted extras (qualified/include)."
+        },
+        "exclude_single_letter_identifiers": {
+          "type": "boolean",
+          "default": false,
+          "description": "If true, identifiers of length 1 are excluded unless explicitly declared by discovery rules."
+        },
+        "include_qualified_identifiers": {
+          "type": "string",
+          "enum": ["none", "dot", "scope", "dot_and_scope"],
+          "default": "none",
+          "description": "Allows identifiers participating in qualified forms, e.g. System.out (dot) or std::cout (scope), even if not declared locally."
+        },
+        "include_include_headers": {
+          "type": "boolean",
+          "default": false,
+          "description": "If true, identifiers inside #include <...> or #include \"...\" are indexable per identifier_rule."
+        }
+      }
+    }
+  }
+}

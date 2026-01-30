@@ -1,0 +1,80 @@
+{
+  "schema_version": "2.1",
+  "profile_id": "codeindex.java@2.1",
+  "ordering": "lex",
+  "generated_at": "2026-01-16T00:00:00Z",
+  "files": [
+    {
+      "file_id": "A.java",
+      "lines": 4,
+      "bytes": 80,
+      "sha256": "0db7d02bd57eead33fc478e92f16ac51cf3fe1d880fc4bef4b67b355472dbba8"
+    },
+    {
+      "file_id": "B.java",
+      "lines": 6,
+      "bytes": 79,
+      "sha256": "f668e497057b502e7cac34ba4dc73edc6f0b5650a61c92ed328497647bfb9d21"
+    }
+  ],
+  "symbols": [
+    {
+      "identifier": "foo",
+      "occurrences": [
+        {
+          "file_id": "A.java",
+          "line": 3,
+          "col_start": 21,
+          "col_end": 24
+        },
+        {
+          "file_id": "B.java",
+          "line": 4,
+          "col_start": 15,
+          "col_end": 18
+        }
+      ],
+      "stats": {
+        "occurrence_count": 2,
+        "unique_line_count": 2
+      }
+    },
+    {
+      "identifier": "mf",
+      "occurrences": [
+        {
+          "file_id": "A.java",
+          "line": 1,
+          "col_start": 9,
+          "col_end": 11
+        },
+        {
+          "file_id": "B.java",
+          "line": 1,
+          "col_start": 9,
+          "col_end": 11
+        }
+      ],
+      "stats": {
+        "occurrence_count": 2,
+        "unique_line_count": 2
+      }
+    },
+    {
+      "identifier": "run",
+      "occurrences": [
+        {
+          "file_id": "B.java",
+          "line": 3,
+          "col_start": 15,
+          "col_end": 18
+        }
+      ],
+      "stats": {
+        "occurrence_count": 1,
+        "unique_line_count": 1
+      }
+    }
+  ],
+  "diagnostics": []
+}
