@@ -1,0 +1,32 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeIndex.Core", "CodeIndex.Core\\CodeIndex.Core.csproj", "{9A7B9F25-6B1E-4C08-9B1C-6D6E4B5D1B11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeIndex.Cli", "CodeIndex.Cli\\CodeIndex.Cli.csproj", "{C00B6C8D-3B3E-4D3D-8F77-DF3A4B10C3A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeIndex.Tests", "CodeIndex.Tests\\CodeIndex.Tests.csproj", "{5B4A7D5A-6B9C-4D10-8E94-0A42D7A69959}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A7B9F25-6B1E-4C08-9B1C-6D6E4B5D1B11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A7B9F25-6B1E-4C08-9B1C-6D6E4B5D1B11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A7B9F25-6B1E-4C08-9B1C-6D6E4B5D1B11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A7B9F25-6B1E-4C08-9B1C-6D6E4B5D1B11}.Release|Any CPU.Build.0 = Release|Any CPU
+
+		{C00B6C8D-3B3E-4D3D-8F77-DF3A4B10C3A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C00B6C8D-3B3E-4D3D-8F77-DF3A4B10C3A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C00B6C8D-3B3E-4D3D-8F77-DF3A4B10C3A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C00B6C8D-3B3E-4D3D-8F77-DF3A4B10C3A7}.Release|Any CPU.Build.0 = Release|Any CPU
+
+		{5B4A7D5A-6B9C-4D10-8E94-0A42D7A69959}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B4A7D5A-6B9C-4D10-8E94-0A42D7A69959}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B4A7D5A-6B9C-4D10-8E94-0A42D7A69959}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B4A7D5A-6B9C-4D10-8E94-0A42D7A69959}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://codeindex.dev/schemas/symbol_index.schema.json",
+  "title": "CodeIndex SymbolIndex",
+  "type": "object",
+  "required": ["schema_version", "profile_id", "ordering", "files", "symbols"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "string", "const": "2.1" },
+    "profile_id": { "type": "string", "minLength": 1 },
+    "ordering": { "type": "string", "enum": ["lex", "locale", "custom"] },
+    "generated_at": { "type": "string", "format": "date-time" },
+
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["file_id", "lines", "bytes"],
+        "additionalProperties": false,
+        "properties": {
+          "file_id": { "type": "string", "minLength": 1 },
+          "lines": { "type": "integer", "minimum": 0 },
+          "bytes": { "type": "integer", "minimum": 0 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        }
+      }
+    },
+
+    "symbols": {
+      "type": "array",
+      "description": "MUST be sorted by identifier according to `ordering`.",
+      "items": {
+        "type": "object",
+        "required": ["identifier", "occurrences"],
+        "additionalProperties": false,
+        "properties": {
+          "identifier": { "type": "string", "minLength": 1 },
+
+          "occurrences": {
+            "type": "array",
+            "description": "MUST be sorted by (file_id, line, col_start).",
+            "items": {
+              "type": "object",
+              "required": ["file_id", "line", "col_start", "col_end"],
+              "additionalProperties": false,
+              "properties": {
+                "file_id": { "type": "string", "minLength": 1 },
+                "line": { "type": "integer", "minimum": 1 },
+                "col_start": { "type": "integer", "minimum": 1 },
+                "col_end": { "type": "integer", "minimum": 1 },
+                "byte_start": { "type": "integer", "minimum": 0 },
+                "byte_end": { "type": "integer", "minimum": 0 }
+              }
+            }
+          },
+
+          "stats": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "occurrence_count": { "type": "integer", "minimum": 0 },
+              "unique_line_count": { "type": "integer", "minimum": 0 }
+            }
+          }
+        }
+      }
+    },
+
+    "diagnostics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["severity", "file_id", "line", "col", "message", "code"],
+        "additionalProperties": false,
+        "properties": {
+          "severity": { "type": "string", "enum": ["info", "warning", "error"] },
+          "file_id": { "type": "string" },
+          "line": { "type": "integer", "minimum": 1 },
+          "col": { "type": "integer", "minimum": 1 },
+          "message": { "type": "string" },
+          "code": { "type": "string" }
+        }
+      }
+    }
+  }
+}
