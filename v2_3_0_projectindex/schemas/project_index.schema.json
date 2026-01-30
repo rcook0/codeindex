@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://codeindex.dev/schemas/project_index.schema.json",
+  "title": "CodeIndex ProjectIndex",
+  "type": "object",
+  "required": ["schema_version", "project_root", "generated_at", "indexes"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "string", "const": "2.3" },
+    "project_root": { "type": "string" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "engine_version": { "type": "string" },
+    "registry_id": { "type": "string" },
+    "project_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+
+    "indexes": {
+      "type": "array",
+      "description": "A list of per-profile SymbolIndex objects.",
+      "items": { "$ref": "symbol_index.schema.json" }
+    },
+
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["profile_id", "format", "path"],
+            "additionalProperties": false,
+            "properties": {
+              "profile_id": { "type": "string" },
+              "format": { "type": "string", "enum": ["csv", "jsonl"] },
+              "path": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+
+    "diagnostics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["severity", "file_id", "line", "col", "message", "code"],
+        "additionalProperties": false,
+        "properties": {
+          "severity": { "type": "string", "enum": ["info", "warning", "error"] },
+          "file_id": { "type": "string" },
+          "line": { "type": "integer", "minimum": 1 },
+          "col": { "type": "integer", "minimum": 1 },
+          "message": { "type": "string" },
+          "code": { "type": "string" }
+        }
+      }
+    }
+  }
+}

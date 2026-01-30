@@ -1,0 +1,226 @@
+{
+  "schema_version": "2.3",
+  "project_root": "corpus/project/inputs",
+  "generated_at": "2026-01-16T00:00:00Z",
+  "engine_version": "2.3.0",
+  "registry_id": "corpus/project/registry.json",
+  "indexes": [
+    {
+      "schema_version": "2.1",
+      "profile_id": "codeindex.cpp@2.1",
+      "ordering": "lex",
+      "generated_at": "2026-01-16T00:00:00Z",
+      "files": [
+        {
+          "file_id": "B.cpp",
+          "lines": 6,
+          "bytes": 99,
+          "sha256": "f03edefc0fd39db59649076f0da7b0e284843ace5b672ffa12b910f36a559a60"
+        }
+      ],
+      "symbols": [
+        {
+          "identifier": "cout",
+          "occurrences": [
+            {
+              "file_id": "B.cpp",
+              "line": 4,
+              "col_start": 8,
+              "col_end": 12
+            }
+          ],
+          "stats": {
+            "occurrence_count": 1,
+            "unique_line_count": 1
+          }
+        },
+        {
+          "identifier": "endl",
+          "occurrences": [
+            {
+              "file_id": "B.cpp",
+              "line": 4,
+              "col_start": 30,
+              "col_end": 34
+            }
+          ],
+          "stats": {
+            "occurrence_count": 1,
+            "unique_line_count": 1
+          }
+        },
+        {
+          "identifier": "iostream",
+          "occurrences": [
+            {
+              "file_id": "B.cpp",
+              "line": 1,
+              "col_start": 11,
+              "col_end": 19
+            }
+          ],
+          "stats": {
+            "occurrence_count": 1,
+            "unique_line_count": 1
+          }
+        },
+        {
+          "identifier": "main",
+          "occurrences": [
+            {
+              "file_id": "B.cpp",
+              "line": 2,
+              "col_start": 5,
+              "col_end": 9
+            }
+          ],
+          "stats": {
+            "occurrence_count": 1,
+            "unique_line_count": 1
+          }
+        },
+        {
+          "identifier": "std",
+          "occurrences": [
+            {
+              "file_id": "B.cpp",
+              "line": 4,
+              "col_start": 3,
+              "col_end": 6
+            },
+            {
+              "file_id": "B.cpp",
+              "line": 4,
+              "col_start": 25,
+              "col_end": 28
+            }
+          ],
+          "stats": {
+            "occurrence_count": 2,
+            "unique_line_count": 1
+          }
+        },
+        {
+          "identifier": "value",
+          "occurrences": [
+            {
+              "file_id": "B.cpp",
+              "line": 3,
+              "col_start": 7,
+              "col_end": 12
+            },
+            {
+              "file_id": "B.cpp",
+              "line": 4,
+              "col_start": 16,
+              "col_end": 21
+            }
+          ],
+          "stats": {
+            "occurrence_count": 2,
+            "unique_line_count": 2
+          }
+        }
+      ],
+      "diagnostics": []
+    },
+    {
+      "schema_version": "2.1",
+      "profile_id": "codeindex.java@2.1",
+      "ordering": "lex",
+      "generated_at": "2026-01-16T00:00:00Z",
+      "files": [
+        {
+          "file_id": "A.java",
+          "lines": 5,
+          "bytes": 100,
+          "sha256": "a62e57a25a3e7898c5e2551359453a233d0dc6b93c31995cc82a8b0376f49afa"
+        }
+      ],
+      "symbols": [
+        {
+          "identifier": "A",
+          "occurrences": [
+            {
+              "file_id": "A.java",
+              "line": 2,
+              "col_start": 14,
+              "col_end": 15
+            }
+          ],
+          "stats": {
+            "occurrence_count": 1,
+            "unique_line_count": 1
+          }
+        },
+        {
+          "identifier": "getValue",
+          "occurrences": [
+            {
+              "file_id": "A.java",
+              "line": 4,
+              "col_start": 14,
+              "col_end": 22
+            }
+          ],
+          "stats": {
+            "occurrence_count": 1,
+            "unique_line_count": 1
+          }
+        },
+        {
+          "identifier": "proj",
+          "occurrences": [
+            {
+              "file_id": "A.java",
+              "line": 1,
+              "col_start": 9,
+              "col_end": 13
+            }
+          ],
+          "stats": {
+            "occurrence_count": 1,
+            "unique_line_count": 1
+          }
+        },
+        {
+          "identifier": "value",
+          "occurrences": [
+            {
+              "file_id": "A.java",
+              "line": 3,
+              "col_start": 15,
+              "col_end": 20
+            },
+            {
+              "file_id": "A.java",
+              "line": 4,
+              "col_start": 34,
+              "col_end": 39
+            }
+          ],
+          "stats": {
+            "occurrence_count": 2,
+            "unique_line_count": 2
+          }
+        }
+      ],
+      "diagnostics": []
+    }
+  ],
+  "artifacts": {
+    "rows": [
+      {
+        "profile_id": "codeindex.cpp@2.1",
+        "format": "csv",
+        "path": "out/cpp.rows.csv"
+      },
+      {
+        "profile_id": "codeindex.java@2.1",
+        "format": "csv",
+        "path": "out/java.rows.csv"
+      }
+    ]
+  },
+  "diagnostics": []
+}

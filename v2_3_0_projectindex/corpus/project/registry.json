@@ -1,0 +1,11 @@
+{
+  "$schema": "../../profiles/registry.schema.json",
+  "profiles": {
+    "java": "../profiles.java.json",
+    "cpp": "../profiles.cpp.json"
+  },
+  "rules": [
+    { "match": { "glob": "**/*.java" }, "profile": "java" },
+    { "match": { "glob": "**/*.cpp" }, "profile": "cpp" }
+  ]
+}
