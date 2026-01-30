@@ -1,0 +1,28 @@
+{
+  "profile_id": "codeindex.cpp@2.1",
+  "name": "C++",
+  "version": "2.1",
+  "case_sensitivity": "sensitive",
+  "normalization": { "mode": "none", "preserve_original_spelling": true },
+  "identifier_rule": { "mode": "regex", "pattern": "[A-Za-z_][A-Za-z0-9_]*" },
+  "stop_words": {
+    "mode": "inline",
+    "words": [
+      "class","struct","public","private","protected","static","void","int","return",
+      "const","if","else","for","while","true","false","nullptr",
+      "include","namespace","using"
+    ]
+  },
+  "comment_syntax": {
+    "line_comment_starts": ["//"],
+    "block_comment_starts": ["/*"],
+    "block_comment_ends": ["*/"]
+  },
+  "literal_syntax": {
+    "exclude_literals": true,
+    "string_delims": ["\""],
+    "char_delims": ["'"],
+    "escape_char": "\\",
+    "allow_multiline_strings": false
+  }
+}

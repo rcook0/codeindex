@@ -1,0 +1,23 @@
+{
+  "schema_version": "2.1",
+  "profile_id": "codeindex.java@2.1",
+  "ordering": "lex",
+  "generated_at": "2026-01-16T00:00:00Z",
+  "files": [
+    { "file_id": "java_basic.java", "lines": 0, "bytes": 0, "sha256": "REPLACE_ME" }
+  ],
+  "symbols": [
+    { "identifier": "Hello", "occurrences": [{ "file_id": "java_basic.java", "line": 2, "col_start": 14, "col_end": 19 }], "stats": { "occurrence_count": 1, "unique_line_count": 1 } },
+    { "identifier": "demo", "occurrences": [{ "file_id": "java_basic.java", "line": 1, "col_start": 9, "col_end": 13 }], "stats": { "occurrence_count": 1, "unique_line_count": 1 } },
+    { "identifier": "max", "occurrences": [
+        { "file_id": "java_basic.java", "line": 4, "col_start": 21, "col_end": 24 },
+        { "file_id": "java_basic.java", "line": 5, "col_start": 34, "col_end": 37 }
+      ], "stats": { "occurrence_count": 2, "unique_line_count": 2 } },
+    { "identifier": "run", "occurrences": [{ "file_id": "java_basic.java", "line": 5, "col_start": 15, "col_end": 18 }], "stats": { "occurrence_count": 1, "unique_line_count": 1 } },
+    { "identifier": "value", "occurrences": [
+        { "file_id": "java_basic.java", "line": 3, "col_start": 15, "col_end": 20 },
+        { "file_id": "java_basic.java", "line": 5, "col_start": 38, "col_end": 43 }
+      ], "stats": { "occurrence_count": 2, "unique_line_count": 2 } }
+  ],
+  "diagnostics": []
+}
